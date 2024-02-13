@@ -1,0 +1,407 @@
+Test Cases for StudyGroup Feature:
+
+******************************************************************************
+Test Case 1: Creating a StudyGroup
+
+a. Steps:
+Call the API endpoint to create a StudyGroup.
+Provide valid input data including StudyGroup name, subject, and user list.
+Verify that the StudyGroup is successfully created and returned with the correct details.
+
+b. Inputs:
+StudyGroup name: "StudyGroup1"
+Subject: Chemistry
+User list: [User1, User2]
+
+c. Testing Level: Component Testing (using NUnit framework)
+
+d. Regression: Yes, add to regression.
+
+******************************************************************************
+Test Case 2: Retrieving StudyGroups
+
+a. Steps:
+Call the API endpoint to retrieve all StudyGroups.
+Verify that the returned StudyGroups contain the expected data.
+
+b. Inputs: None required.
+
+c. Testing Level: Component Testing (using NUnit framework)
+
+d. Regression: Yes, add to regression.
+******************************************************************************
+
+Test Case 3: Searching StudyGroups by Subject
+
+a. Steps:
+Call the API endpoint to search for StudyGroups by subject.
+Provide a valid subject as input.
+Verify that the returned StudyGroups match the search criteria.
+
+b. Inputs:
+Subject: Physics
+
+c. Testing Level: Component Testing (using NUnit framework)
+
+d. Regression: Yes, add to regression.
+
+******************************************************************************
+Test Case 4: Joining a StudyGroup
+
+a. Steps:
+Call the API endpoint to join a StudyGroup.
+Provide valid StudyGroup ID and User ID.
+Verify that the user is successfully added to the StudyGroup.
+
+b. Inputs:
+StudyGroup ID: 1
+User ID: 10
+
+c. Testing Level: Component Testing (using NUnit framework)
+
+d. Regression: Yes, add to regression.
+
+******************************************************************************
+Test Case 5: Leaving a StudyGroup
+
+a. Steps:
+Call the API endpoint to leave a StudyGroup.
+Provide valid StudyGroup ID and User ID.
+Verify that the user is successfully removed from the StudyGroup.
+
+b. Inputs:
+StudyGroup ID: 1
+User ID: 10
+
+c. Testing Level: Component Testing (using NUnit framework)
+
+d. Regression: Yes, add to regression.
+
+******************************************************************************
+Test Case 6: Creating a StudyGroup and verifying the returned result
+
+a. Steps:
+Call the API endpoint to create a StudyGroup.
+Provide valid input data including StudyGroup name, subject, and user list.
+Verify that the returned result is of type OkResult.
+
+b. Inputs:
+StudyGroup name: "StudyGroup1"
+Subject: Chemistry
+User list: [User1, User2]
+
+c. Testing Level: Component Testing (using NUnit framework)
+
+d. Regression: Yes, add to regression.
+
+******************************************************************************
+Test Case 7: Retrieving StudyGroups and verifying the returned result
+
+a. Steps:
+Call the API endpoint to retrieve all StudyGroups.
+Verify that the returned result is of type OkObjectResult.
+
+b. Inputs: None required.
+
+c. Testing Level: Component Testing (using NUnit framework)
+
+d. Regression: Yes, add to regression.
+
+******************************************************************************
+Test Case 8: Searching StudyGroups by Subject and verifying the returned result
+
+a. Steps:
+Call the API endpoint to search for StudyGroups by subject.
+Provide a valid subject as input.
+Verify that the returned result is of type OkObjectResult.
+
+b. Inputs:
+Subject: Physics
+
+c. Testing Level: Component Testing (using NUnit framework)
+
+d. Regression: Yes, add to regression.
+
+******************************************************************************
+Test Case 9: Joining a StudyGroup and verifying the returned result
+
+a. Steps:
+Call the API endpoint to join a StudyGroup.
+Provide valid StudyGroup ID and User ID.
+Verify that the returned result is of type OkResult.
+
+b. Inputs:
+StudyGroup ID: 1
+User ID: 10
+
+c. Testing Level: Component Testing (using NUnit framework)
+
+d. Regression: Yes, add to regression.
+
+******************************************************************************
+Test Case 10: Leaving a StudyGroup and verifying the returned result
+
+a. Steps:
+Call the API endpoint to leave a StudyGroup.
+Provide valid StudyGroup ID and User ID.
+Verify that the returned result is of type OkResult.
+
+b. Inputs:
+StudyGroup ID: 1
+User ID: 10
+
+c. Testing Level: Component Testing (using NUnit framework)
+
+d. Regression: Yes, add to regression.
+
+******************************************************************************
+Test Case 11: Adding a User to StudyGroup
+
+a. Steps:
+Create a StudyGroup object.
+Add a user to the StudyGroup using the AddUser method.
+Verify that the user is successfully added to the StudyGroup.
+
+b. Inputs:
+StudyGroup: StudyGroup1
+User: User1
+
+c. Testing Level: Unit Testing (using NUnit framework)
+
+d. Regression: No, this is a unit test.
+
+******************************************************************************
+Test Case 12: Removing a User from StudyGroup
+
+a. Steps:
+Create a StudyGroup object with a user.
+Remove the user from the StudyGroup using the RemoveUser method.
+Verify that the user is successfully removed from the StudyGroup.
+
+b. Inputs:
+StudyGroup: StudyGroup1
+User: User1
+
+c. Testing Level: Unit Testing (using NUnit framework)
+
+d. Regression: No, this is a unit test.
+
+******************************************************************************
+Test Case 13: Validate creation of multiple study groups for a single subject
+
+a. Steps:
+Create multiple study groups for a single subject using the application interface.
+Verify that all study groups are successfully created and displayed.
+Ensure that each study group belongs to the same subject.
+
+b. Inputs:
+Subject: Chemistry
+Multiple study group names and details.
+
+c. Testing Level: End-to-End Testing (Manual)
+
+d. Regression: Yes, add to regression.
+
+e. Questions for the Product Owner:
+i. limit of amount of study groups created by subject (depending on the limit of users per study group the limit could vary from the amount of users)
+ii. suggest as an improvement adding of users while creating the study groups
+iii. study group administration clarification.
+
+******************************************************************************
+Test Case 14: Validate creation of multiple study groups for different subjects
+
+a. Steps:
+Create multiple study groups for different subjects using the application interface.
+Verify that all study groups are successfully created and displayed.
+Ensure that each study group belongs to a different subject.
+
+b. Inputs:
+Different subjects: Chemistry, Physics, Math
+Multiple study group names and details for each subject.
+
+c. Testing Level: End-to-End Testing (Manual)
+
+d. Regression: Yes, add to regression.
+
+******************************************************************************
+Test Case 15: Verify validation of min and max chars for the study group name
+
+a. Steps:
+Attempt to create a study group with a study group name that contains the minimum number of characters.
+Attempt to create a study group with a study group name that contains the maximum number of characters.
+Verify that both attempts are successful.
+Attempt to create a study group with a study group name that contains fewer characters than the minimum allowed.
+Attempt to create a study group with a study group name that contains more characters than the maximum allowed.
+Verify that both attempts fail with appropriate error messages.
+
+b. Inputs:
+Study group name with minimum and maximum allowed characters.
+Study group name with fewer characters than the minimum allowed.
+Study group name with more characters than the maximum allowed.
+
+c. Testing Level: End-to-End Testing (Manual)
+
+d. Regression: Yes, add to regression.
+
+******************************************************************************
+Test Case 16: Verify the use of special characters in the study group naming
+
+a. Steps:
+Attempt to create a study group with special characters in the study group name.
+Verify that the study group is successfully created.
+Verify that the special characters are displayed correctly in the study group name.
+
+b. Inputs:
+Study group name with special characters.
+
+c. Testing Level: End-to-End Testing (Manual)
+
+d. Regression: Yes, add to regression.
+
+******************************************************************************
+Test Case 16: Verify the XSS validation in the study group naming
+
+a. Steps:
+Attempt to create a study group with XSS attack payloads in the study group name.
+Verify that the study group creation process detects and prevents XSS attacks.
+Verify that the study group name is displayed correctly without executing any scripts.
+
+b. Inputs:
+Study group name with XSS attack payloads.
+
+c. Testing Level: End-to-End Testing (Manual)
+
+d. Regression: Yes, add to regression.
+
+******************************************************************************
+Test Case 17: Verify the subject name validation
+
+a. Steps:
+Attempt to select an invalid subject name from the dropdown (if applicable).
+Verify that the application prevents the selection of invalid subject names.
+
+b. Inputs:
+Selection of an invalid subject name (if applicable).
+
+c. Testing Level: End-to-End Testing (Manual)
+
+d. Regression: Yes, add to regression.
+
+******************************************************************************
+Test Case 18: Verify that the new created study group is displayed in the list of all existing Study Groups
+
+a. Steps:
+Create a new study group.
+Verify that the newly created study group is displayed in the list of all existing study groups.
+
+b. Inputs:
+New study group creation details.
+
+c. Testing Level: End-to-End Testing (Manual)
+
+d. Regression: Yes, add to regression.
+
+******************************************************************************
+Test Case 19: Verify the prevention of button spamming for the creation of study groups
+
+a. Steps:
+Attempt to create multiple study groups rapidly by clicking the create button repeatedly.
+Verify that the application prevents button spamming and only creates one study group per click.
+
+b. Inputs:
+Rapid clicking of the create button.
+
+c. Testing Level: End-to-End Testing (Manual)
+
+d. Regression: Yes, add to regression.
+
+******************************************************************************
+Test Case 20: Verify that a user can join multiple Study Groups for different Subjects
+
+a. Steps:
+Join multiple study groups, each belonging to a different subject.
+Verify that the user is successfully added to each study group.
+
+b. Inputs:
+Study group IDs for joining.
+
+c. Testing Level: End-to-End Testing (Manual)
+
+d. Regression: Yes, add to regression.
+
+e. Questions for the Product Owner:
+i. If the user can join multiple study groups within the same subject because this could lead to extra tests to be added in order to verify those validations
+ii. limit of users per study group (at least 2?)
+iii. if a userA is already in a StudyGroup1 from Math, then userA should it be or not available for StudyGroup2 for the same subject?
+
+******************************************************************************
+Test Case 21: Verify that a list of all existing Study Groups
+
+a. Steps:
+Access the list of all existing study groups.
+Verify that the list displays all study groups correctly.
+
+b. Inputs: None required.
+
+c. Testing Level: End-to-End Testing (Manual)
+
+d. Regression: Yes, add to regression.
+
+******************************************************************************
+Test Case 22: Verify users can filter the Study Groups by a given Subject
+
+a. Steps:
+Use the filtering feature to filter study groups by a specific subject.
+Verify that only study groups belonging to the selected subject are displayed.
+
+b. Inputs:
+Subject selected for filtering.
+
+c. Testing Level: End-to-End Testing (Manual)
+
+d. Regression: Yes, add to regression.
+
+******************************************************************************
+Test Case 23: Verify users can sort to see most recently created Study Groups or oldest ones
+a. Steps:
+Use the sorting feature to sort study groups by creation date.
+Verify that study groups are displayed in the correct order based on the selected sorting criteria.
+
+b. Inputs:
+Selection of sorting criteria (most recently created or oldest).
+
+c. Testing Level: End-to-End Testing (Manual)
+
+d. Regression: Yes, add to regression.
+
+******************************************************************************
+Test Case 24: Verify that the filter and sorting works can work compounded
+
+a. Steps:
+Apply both filtering and sorting to the list of study groups.
+Verify that the study groups are filtered and sorted according to the selected criteria.
+
+b. Inputs:
+Selection of filter and sorting criteria.
+
+c. Testing Level: End-to-End Testing (Manual)
+
+d. Regression: Yes, add to regression.
+
+******************************************************************************
+Test Case 25: Verify that the user can leave Study Groups he joined
+
+a. Steps:
+Join a study group.
+Leave the study group.
+Verify that the user is successfully removed from the study group.
+
+b. Inputs:
+Study group ID for leaving.
+
+c. Testing Level: End-to-End Testing (Manual)
+
+d. Regression: Yes, add to regression.
+
+e. Questions for the Product Owner:
+i. can a user be kicked out from a study group in future features (study group administration clarification)
